@@ -351,3 +351,104 @@ textarea {
     font-family: inherit;
     resize: vertical;
 }
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 2. Make all sections and wrappers responsive */
+section {
+    padding: 40px 15px; /* Adds side padding so content doesn't touch phone edges */
+    box-sizing: border-box;
+}
+
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 15px;
+    box-sizing: border-box;
+}
+
+/* 3. Fix Navigation for mobile screens */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    flex-wrap: wrap; /* Allows menu items to wrap if screen is too small */
+    gap: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+/* 4. Fix side-by-side cards (Maps and Menus) to stack on mobile */
+.events-wrapper, .menu-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Automatically wraps items onto the next line on mobile */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.info-card, .menu-card {
+    flex: 1;
+    min-width: 100%; /* Forces cards to take full width on smaller mobile screens */
+    max-width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* On larger screens (tablets and desktops), let them sit side-by-side again */
+@media (min-width: 768px) {
+    .info-card {
+        min-width: 300px;
+        max-width: 500px;
+    }
+    .menu-card {
+        min-width: 280px;
+        max-width: 350px;
+    }
+}
+
+/* 5. Fix Form and Inputs for mobile */
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px; /* Reduced from 50px so it fits comfortably on phone screens */
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; /* Crucial so padding doesn't force inputs outside the form */
+    display: block;
+    margin: 5px 0 15px 0;
+    font-family: inherit;
+}
+
+/* 6. Make iframe maps fluid on mobile */
+iframe {
+    max-width: 100%;
+    height: auto;
+}
