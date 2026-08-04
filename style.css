@@ -1,97 +1,59 @@
-
+/* --- Global Styles --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
     background-color: #fff;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .content-wrapper {
     max-width: 800px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 40px 15px;
+    box-sizing: border-box;
 }
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
 
 section {
-    padding: 40px 0;
+    padding: 40px 15px;
     text-align: center;
+    box-sizing: border-box;
 }
 
-h1, h2, h3  {
+h1, h2, h3 {
     color: #555;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-family: 'Times New Roman', Times, serif;
 }
 
-
-form {
+/* --- Navigation --- */
+nav {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 15px;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-button {
-    background: #8e7d77;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;cccc
-    cursor: pointer;
-}
-
-.hero {
-    background-image: url('1434.JPG');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-
-    height: 95vh;
-
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    border-bottom: 5px solid #000000;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: #fff;
     box-sizing: border-box;
 }
 
-
-.hero-content {
-    padding: 20px;
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
 }
-
 
 nav ul li a {
     text-decoration: none;
@@ -104,36 +66,113 @@ nav ul li a {
     transition: color 0.3s ease;
 }
 
-
 nav ul li a:hover {
     color: #8e7d77;
 }
 
-.cookie{
-  background-color: rgb(245, 247, 248);
-}
-
-input, select {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+/* --- Hero Header --- */
+.hero {
+    background-image: url('1434.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    border-bottom: 5px solid #000000;
     box-sizing: border-box;
-    display: block;
 }
 
-html {
-  scroll-behavior: smooth;
+.hero-content {
+    padding: 20px;
 }
 
+.cookie {
+    background-color: rgb(245, 247, 248);
+}
+
+/* --- Cards & Wrappers (Maps & Menus) --- */
+.events-wrapper, .menu-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+
+.info-card, .menu-card {
+    flex: 1;
+    min-width: 100%;
+    max-width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.menu-card h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.menu-card img {
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+}
+
+/* --- Dropdown Menus --- */
+.menu-dropdown {
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.menu-dropdown summary {
+    font-weight: 600;
+    color: #8e7d77;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    outline: none;
+    transition: color 0.3s ease;
+}
+
+.menu-dropdown summary:hover {
+    color: #555;
+}
+
+.menu-dropdown ul {
+    margin: 10px 0 0 20px;
+    padding: 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.menu-dropdown li {
+    margin-bottom: 5px;
+}
+
+/* --- RSVP Form & Inputs --- */
 form {
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    padding: 50px;
+    padding: 20px;
     background: white;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-sizing: border-box;
 }
 
 label {
@@ -143,21 +182,28 @@ label {
     font-size: 1rem;
     font-weight: 500;
     color: #444;
+    text-align: left;
 }
 
-
-input, select {
+input, select, textarea {
     width: 100%;
-    padding: 15px;
+    padding: 12px;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-sizing: border-box;
+    display: block;
+    margin: 5px 0 15px 0;
+    font-family: inherit;
+}
+
+textarea {
+    resize: vertical;
 }
 
 button[type="submit"] {
     width: 100%;
-    margin-top: 40px;
+    margin-top: 20px;
     padding: 15px;
     font-size: 1.1rem;
     background-color: #555;
@@ -172,36 +218,18 @@ button[type="submit"]:hover {
     background-color: #333;
 }
 
-
-
-.footer{
-  text-align: center;
+/* --- Iframes / Maps --- */
+iframe {
+    max-width: 100%;
+    height: auto;
 }
 
-
-.Meniuri{
-   text-align: center;
-}
-
-.events-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap; /* Automatically stacks them on smaller screens */
-    margin-top: 30px;
-}
-
-.info-card {
-    flex: 1;
-    min-width: 300px;
-    max-width: 500px;
-    background: #fff;
+.footer {
+    text-align: center;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    box-sizing: border-box;
 }
 
+/* --- Preloader Animation --- */
 #preloader {
     position: fixed;
     top: 0;
@@ -246,7 +274,7 @@ button[type="submit"]:hover {
 .ring-2 {
     left: 35px;
     top: 0;
-    border-color: #d4af37; /* Optional: gives a gold/silver wedding ring contrast */
+    border-color: #d4af37;
     animation-delay: 0.2s;
 }
 
@@ -270,185 +298,23 @@ button[type="submit"]:hover {
     margin-top: 10px;
 }
 
-
-.menu-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap; /* Stacks vertically on smaller mobile screens */
-    margin-top: 30px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.menu-card {
-    flex: 1;
-    min-width: 280px;
-    max-width: 350px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    box-sizing: border-box;
-    text-align: left;
-}
-
-.menu-card h3 {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.menu-card img {
-    border-radius: 8px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-
-
-.menu-dropdown {
-    margin-top: 15px;
-    border-top: 1px solid #eee;
-    padding-top: 10px;
-}
-
-.menu-dropdown summary {
-    font-weight: 600;
-    color: #8e7d77;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    outline: none;
-    transition: color 0.3s ease;
-}
-
-.menu-dropdown summary:hover {
-    color: #555;
-}
-
-.menu-dropdown ul {
-    margin: 10px 0 0 20px;
-    padding: 0;
-    font-size: 0.95rem;
-    color: #555;
-}
-
-.menu-dropdown li {
-    margin-bottom: 5px;
-}
-
-textarea {
-    width: 100%;
-    padding: 15px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-sizing: border-box; 
-    display: block;
-    margin: 5px 0;
-    font-family: inherit;
-    resize: vertical;
-}
-
-body {
-    overflow-x: hidden;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* 2. Make all sections and wrappers responsive */
-section {
-    padding: 40px 15px; /* Adds side padding so content doesn't touch phone edges */
-    box-sizing: border-box;
-}
-
-.content-wrapper {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 15px;
-    box-sizing: border-box;
-}
-
-/* 3. Fix Navigation for mobile screens */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    flex-wrap: wrap; /* Allows menu items to wrap if screen is too small */
-    gap: 10px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    padding: 0;
-    margin: 0;
-    flex-wrap: wrap;
-}
-
-/* 4. Fix side-by-side cards (Maps and Menus) to stack on mobile */
-.events-wrapper, .menu-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap; /* Automatically wraps items onto the next line on mobile */
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.info-card, .menu-card {
-    flex: 1;
-    min-width: 100%; /* Forces cards to take full width on smaller mobile screens */
-    max-width: 100%;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-sizing: border-box;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-/* On larger screens (tablets and desktops), let them sit side-by-side again */
+/* --- Media Queries for Tablets & Desktops (Screens 768px and wider) --- */
 @media (min-width: 768px) {
+    nav {
+        padding: 20px 40px;
+    }
+
+    form {
+        padding: 50px;
+    }
+
     .info-card {
         min-width: 300px;
         max-width: 500px;
     }
+    
     .menu-card {
         min-width: 280px;
         max-width: 350px;
     }
-}
-
-/* 5. Fix Form and Inputs for mobile */
-form {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px; /* Reduced from 50px so it fits comfortably on phone screens */
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    box-sizing: border-box;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 12px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-sizing: border-box; /* Crucial so padding doesn't force inputs outside the form */
-    display: block;
-    margin: 5px 0 15px 0;
-    font-family: inherit;
-}
-
-/* 6. Make iframe maps fluid on mobile */
-iframe {
-    max-width: 100%;
-    height: auto;
 }
