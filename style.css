@@ -338,3 +338,16 @@ button[type="submit"]:hover {
 .menu-dropdown li {
     margin-bottom: 5px;
 }
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; 
+    display: block;
+    margin: 5px 0;
+    font-family: inherit;
+    resize: vertical;
+}
