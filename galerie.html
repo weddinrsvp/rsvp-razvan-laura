@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Răzvan & Laura</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="preloader">
+        <div class="rings-container">
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+        </div>
+        <h2 class="preloader-title">Răzvan & Laura</h2>
+    </div>
+     <nav>   
+       <div class="logo">R&L</div>
+       <ul>
+           <li><a href="index.html">Acasă</a></li>
+           <li><a href="#details">Detalii</a></li>
+           <li><a href="#Meniuri">Meniuri</a></li>
+           <li><a href="galerie.html">Galerie</a></li>
+           <li><a href="#rsvp">RSVP</a></li>
+       </ul>
+     </nav>
+
+<script>
+    window.addEventListener("load", function () {
+        const preloader = document.getElementById("preloader");
+        setTimeout(() => {
+            preloader.classList.add("fade-out");
+        }, 1500); 
+    });
+</script>
+<div class="footer">
+<footer>
+ <p>&copy; 2027 Nuntă Răzvan și Laura</p>
+</footer>
+</div>
+</body>
