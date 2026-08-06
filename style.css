@@ -333,3 +333,24 @@ h5 {
     font-size: 35px;
     text-shadow: 5px 5px #000000;
 }
+
+#modal-img {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* State when the image is fully visible */
+#modal-img.fade-in {
+    opacity: 1;
+}
+
+/* Optional: Fade for the background overlay as well */
+#image-modal {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: none; /* Controlled by JS */
+}
+
+#image-modal.show {
+    opacity: 1;
+}
