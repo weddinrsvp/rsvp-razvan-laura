@@ -61,10 +61,13 @@
 <section id="Meniuri">
     <h1>Meniuri</h1>
 	<p>Toate meniurile includ Open Bar si Candy Bar</p>
+    <p>Puteți da click pe imaginea cu meniul principal pentru a vedea restul preparatelor!</p>
 	<div class="menu-wrapper">
         <div class="menu-card">
             <h3>Meniul Standard</h3>
+            <a href="#galerie-modal" class="image-popup-trigger">
             <img src="Pasted image.png" width="100%" height="220px" alt="Sarmale">
+            </a>
             <p><strong>Felul principal:</strong> Sarmale în foi de varză cu mămăligă, smântână și ardei iute.</p>
             <div class="menu-details-plain">
                 <p><strong>Detalii meniu:</strong></p>
@@ -151,6 +154,86 @@
             preloader.classList.add("fade-out");
         }, 1500); 
     });
+</script>
+<!-- Gallery Modal Structure -->
+<div id="image-modal" class="modal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.85); text-align:center;">
+    <span class="close-modal" style="position:absolute; top:20px; right:35px; color:#fff; font-size:40px; font-weight:bold; cursor:pointer;">&times;</span>
+    
+    <!-- Previous Button -->
+    <a class="prev-modal" style="position:absolute; top:50%; left:20px; transform:translateY(-50%); color:#fff; font-size:40px; font-weight:bold; cursor:pointer; padding:10px;">&#10094;</a>
+    
+    <!-- Image Display -->
+    <img class="modal-content" id="modal-img" style="max-width:75%; max-height:75%; margin-top:5%;">
+    
+    <!-- Next Button -->
+    <a class="next-modal" style="position:absolute; top:50%; right:20px; transform:translateY(-50%); color:#fff; font-size:40px; font-weight:bold; cursor:pointer; padding:10px;">&#10095;</a>
+</div>
+<script>
+    const galleryImages = [
+        "Pasted image.png",
+        "1434.JPG",
+        // Add more image paths here as needed
+    ];
+
+    let currentIndex = 0;
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("modal-img");
+    const closeBtn = document.querySelector(".close-modal");
+    const prevBtn = document.querySelector(".prev-modal");
+    const nextBtn = document.querySelector(".next-modal");
+
+    function changeImageWithFade(index) {
+        // Fade out current image
+        modalImg.classList.remove("fade-in");
+        
+        setTimeout(() => {
+            currentIndex = index;
+            modalImg.src = galleryImages[currentIndex];
+            // Fade in new image once loaded or slightly after source change
+            setTimeout(() => {
+                modalImg.classList.add("fade-in");
+            }, 50);
+        }, 200); // Matches half of the CSS transition time
+    }
+
+    // Open modal on image click
+    document.querySelectorAll('.image-popup-trigger').forEach(item => {
+        item.addEventListener('click', function (event) {
+            event.preventDefault();
+            modal.style.display = "block";
+            setTimeout(() => modal.classList.add("show"), 10); // Fade in background
+            changeImageWithFade(0); // Start with the first image
+        });
+    });
+
+    // Next button
+    nextBtn.onclick = function() {
+        let newIndex = (currentIndex + 1) % galleryImages.length;
+        changeImageWithFade(newIndex);
+    }
+
+    // Previous button
+    prevBtn.onclick = function() {
+        let newIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        changeImageWithFade(newIndex);
+    }
+
+    // Close modal function
+    function closeModal() {
+        modal.classList.remove("show");
+        modalImg.classList.remove("fade-in");
+        setTimeout(() => {
+            modal.style.display = "none";
+        }, 300); // Wait for fade out animation to finish
+    }
+
+    closeBtn.onclick = closeModal;
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
 </script>
 </body>
 </html>
